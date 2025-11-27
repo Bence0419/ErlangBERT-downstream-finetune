@@ -1,0 +1,15 @@
+{
+  "model": "models\\erlang_clone_detector_baseline\\best",
+  "data_file": "output\\clone_pairs\\test_pairs.jsonl",
+  "metrics": {
+    "acc": 0.9230769230769231,
+    "f1": 0.9166666666666666,
+    "precision": 1.0,
+    "recall": 0.8461538461538461,
+    "auc": 1.0,
+    "TP": 11,
+    "FP": 0,
+    "FN": 2,
+    "TN": 13
+  }
+}

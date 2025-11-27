@@ -1,0 +1,19 @@
+# Modellek, checkpointok, súlyok
+models/
+*.bin
+*.pt
+*.safetensors
+
+# Datasets
+output/
+*.jsonl
+
+# Dokumentumok
+*.pdf
+*.pptx
+*.ppt
+
+# Egyéb nagy / generált
+*.zip
+*.tar
+*.tar.gz

@@ -1,0 +1,58 @@
+{
+  "model_checkpoint": "models\\erlang_graphcodebert_codesearch\\best",
+  "data_file": "output\\code_search_dataset\\test.jsonl",
+  "num_items": 57,
+  "metrics": {
+    "MRR": 0.7756056808688389,
+    "Recall@1": 0.6491228070175439,
+    "Recall@5": 0.9473684210526315,
+    "Recall@10": 0.9649122807017544
+  },
+  "examples": [
+    {
+      "query_nl": "Return (or create) a per-DB index server process for a given module/signature; ensure ETS caches are updated.",
+      "gold_idx": 1,
+      "top1_idx": 0,
+      "hit@1": false,
+      "top1_score": 0.516471266746521,
+      "gold_code_snippet": "get_index(Module, IdxState) ->     DbName = Module:get(db_name, IdxState),     Sig = Module:get(signature, IdxState),     case ets:lookup(by_sig(DbName), {DbName, Sig}) of         [{_, Pid}] when is_p",
+      "top1_code_snippet": "get_index(Module, IdxState) ->     DbName = Module:get(db_name, IdxState),     Sig = Module:get(signature, IdxState),     case ets:lookup(by_sig(DbName), {DbName, Sig}) of         [{_, Pid}] when is_p"
+    },
+    {
+      "query_nl": "Start shard-safe index acquisition by checking a shard ddoc asynchronously.",
+      "gold_idx": 1,
+      "top1_idx": 30,
+      "hit@1": false,
+      "top1_score": 0.36321136355400085,
+      "gold_code_snippet": "get_index(Module, IdxState) ->     DbName = Module:get(db_name, IdxState),     Sig = Module:get(signature, IdxState),     case ets:lookup(by_sig(DbName), {DbName, Sig}) of         [{_, Pid}] when is_p",
+      "top1_code_snippet": "start_link(DbName, Index) ->     proc_lib:start_link(?MODULE, init, [{DbName, Index}])"
+    },
+    {
+      "query_nl": "Parse and apply roster item bulk operations from string params.",
+      "gold_idx": 2,
+      "top1_idx": 2,
+      "hit@1": true,
+      "top1_score": 0.3903047442436218,
+      "gold_code_snippet": "process_rosteritems(ActionS, SubsS, AsksS, UsersS, ContactsS) ->\\n    Action = case ActionS of \\\"list\\\" -> list; \\\"delete\\\" -> delete end,\\n    Subs = lists:foldl(fun(any, _Acc) -> [none, from, to, bo",
+      "top1_code_snippet": "process_rosteritems(ActionS, SubsS, AsksS, UsersS, ContactsS) ->\\n    Action = case ActionS of \\\"list\\\" -> list; \\\"delete\\\" -> delete end,\\n    Subs = lists:foldl(fun(any, _Acc) -> [none, from, to, bo"
+    },
+    {
+      "query_nl": "Return true if a value is a #hyper record, false otherwise.",
+      "gold_idx": 3,
+      "top1_idx": 3,
+      "hit@1": true,
+      "top1_score": 0.7200924158096313,
+      "gold_code_snippet": "is_hyper(#hyper{}) ->     true; is_hyper(_) ->     false",
+      "top1_code_snippet": "is_hyper(#hyper{}) ->     true; is_hyper(_) ->     false"
+    },
+    {
+      "query_nl": "Configures bucket count and starts the generic message store supervisor.",
+      "gold_idx": 6,
+      "top1_idx": 4,
+      "hit@1": false,
+      "top1_score": 0.5611047744750977,
+      "gold_code_snippet": "start(_StartType, _StartArgs) ->     vmq_acl_sup:start_link()",
+      "top1_code_snippet": "start(_StartType, _StartArgs) ->     Buckets = application:get_env(vmq_generic_msg_store, nr_of_buckets, 12),     persistent_term:put({vmq_msg_store, bucks}, Buckets),     vmq_generic_msg_store_sup:st"
+    }
+  ]
+}
