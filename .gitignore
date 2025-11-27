@@ -8,10 +8,7 @@ models/
 output/
 *.jsonl
 
-# Dokumentumok
-*.pdf
-*.pptx
-*.ppt
+
 
 # Egyéb nagy / generált
 *.zip
